@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>งานที่ต้องทำและประสาน งานตักบาตรพระหมื่นรูป กาญจนบุรี</title>
+  <!-- Google Fonts: Kanit & Plus Jakarta Sans (Gen Z Modern Thai Look) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Kanit', 'Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            pastel: {
+              50: '#F0F7FF',
+              100: '#E0EFFE',
+              200: '#BAE0FD',
+              300: '#7CC7FC',
+              400: '#38AAF8',
+              500: '#0E8EE9',
+              600: '#0270C7',
+              900: '#0C3254',
+            }
+          },
+          boxShadow: {
+            'genz': '0 10px 30px -5px rgba(56, 170, 248, 0.16), 0 4px 12px -2px rgba(14, 142, 233, 0.08)',
+            'pop': '0 20px 45px -10px rgba(12, 50, 84, 0.22)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background: radial-gradient(circle at 10% 10%, #E0F2FE 0%, #F0F9FF 45%, #EEF2FF 100%);
+      min-height: 100vh;
+      color: #0F172A;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(186, 224, 253, 0.75);
+    }
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(186, 224, 253, 0.9);
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F0F7FF;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #93C5FD;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #60A5FA;
+    }
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    .float-badge {
+      animation: floatSlow 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-sky-200 selection:text-sky-900 pb-20">
+
+  <!-- Decorative Pastel Blobs -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-sky-200/50 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 -right-24 w-96 h-96 bg-indigo-200/40 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-24 left-1/3 w-80 h-80 bg-cyan-200/40 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- Top Header & Navigation -->
+  <header class="sticky top-0 z-30 pt-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto glass-nav rounded-3xl shadow-genz px-4 sm:px-6 py-3.5 transition-all">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <!-- Brand Title -->
+        <div class="flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sky-400 via-blue-400 to-indigo-400 flex items-center justify-center text-white shadow-md shadow-sky-200 shrink-0 float-badge">
+            <span class="text-2xl">🙏</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider rounded-full bg-sky-100 text-sky-700 border border-sky-200">
+                Kanchanaburi 10,000 Monks
+              </span>
+              <span id="roleBadge" class="hidden px-2.5 py-0.5 text-[11px] font-semibold rounded-full"></span>
+            </div>
+            <h1 id="appTitle" class="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-slate-800 via-sky-800 to-indigo-900 bg-clip-text text-transparent leading-snug">
+              งานที่ต้องทำและประสาน งานตักบาตรพระหมื่นรูป กาญจนบุรี
+            </h1>
+          </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 md:pb-0">
+          <button onclick="switchTab('home')" id="tabBtn-home" class="tab-btn flex items-center gap-2 px-4 py-2 rounded-2xl text-sm font-medium transition-all whitespace-nowrap">
+            <i data-lucide="home" class="w-4 h-4"></i>
+            <span>Home</span>
+          </button>
+
+          <button onclick="switchTab('login')" id="tabBtn-login" class="tab-btn flex items-center gap-2 px-4 py-2 rounded-2xl text-sm font-medium transition-all whitespace-nowrap">
+            <i data-lucide="key-round" class="w-4 h-4"></i>
+            <span id="loginTabLabel">Log In</span>
+          </button>
+
+          <button onclick="switchTab('staff')" id="tabBtn-staff" class="tab-btn hidden flex items-center gap-2 px-4 py-2 rounded-2xl text-sm font-medium transition-all whitespace-nowrap">
+            <i data-lucide="clipboard-edit" class="w-4 h-4"></i>
+            <span>Staff</span>
+          </button>
+
+          <button onclick="switchTab('admin')" id="tabBtn-admin" class="tab-btn hidden flex items-center gap-2 px-4 py-2 rounded-2xl text-sm font-medium transition-all whitespace-nowrap">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>Admin</span>
+          </button>
+
+          <!-- API Settings Button -->
+          <button onclick="openApiConfigModal()" title="ตั้งค่า URL เชื่อมต่อ Google Apps Script" class="p-2 rounded-2xl text-slate-500 hover:text-sky-600 hover:bg-sky-50 border border-transparent hover:border-sky-200 transition-all ml-auto md:ml-1">
+            <i data-lucide="settings" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Connection Status Banner (Shown if GAS_API_URL is not set yet) -->
+  <div id="demoBanner" class="hidden max-w-6xl mx-auto px-4 sm:px-6 mt-4">
+    <div class="bg-gradient-to-r from-sky-500/10 via-blue-500/10 to-indigo-500/10 border border-sky-300/80 rounded-2xl p-3.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+      <div class="flex items-center gap-3 text-xs sm:text-sm text-sky-900">
+        <span class="w-8 h-8 rounded-xl bg-sky-200/80 text-sky-700 flex items-center justify-center shrink-0 font-bold">💡</span>
+        <div>
+          <span class="font-semibold">โหมดจำลองข้อมูล (Demo Mode) หรือยังไม่ได้ใส่ Web App URL:</span>
+          <span>คุณสามารถทดสอบระบบได้ทันที หรือกดปุ่มตั้งค่าเพื่อเชื่อมต่อ Google Apps Script API จริง</span>
+        </div>
+      </div>
+      <button onclick="openApiConfigModal()" class="px-3.5 py-1.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-medium shrink-0 transition shadow-sm">
+        เชื่อมต่อ GAS API
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 mt-6">
+
+    <!-- Quick Stats Overview -->
+    <section class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
+      <div class="glass-card rounded-3xl p-4 shadow-genz flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center shrink-0">
+          <i data-lucide="layers" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <p class="text-xs text-slate-500 font-medium">กลุ่มงานทั้งหมด</p>
+          <p id="statCategories" class="text-xl sm:text-2xl font-bold text-slate-800">0</p>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-3xl p-4 shadow-genz flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0">
+          <i data-lucide="clock" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <p class="text-xs text-slate-500 font-medium">รอดำเนินการ</p>
+          <p id="statPending" class="text-xl sm:text-2xl font-bold text-amber-600">0</p>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-3xl p-4 shadow-genz flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+          <i data-lucide="loader" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <p class="text-xs text-slate-500 font-medium">กำลังดำเนินการ</p>
+          <p id="statInProgress" class="text-xl sm:text-2xl font-bold text-blue-600">0</p>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-3xl p-4 shadow-genz flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+          <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <p class="text-xs text-slate-500 font-medium">เสร็จแล้ว</p>
+          <p id="statCompleted" class="text-xl sm:text-2xl font-bold text-emerald-600">0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- TAB 1: HOME (แสดงกลุ่มงานทั้งหมด ขยายทีละกลุ่ม พับอัตโนมัติ คลิกงานดู Pop-up) -->
+    <!-- ================================================================== -->
+    <section id="tabContent-home" class="space-y-4">
+      <div class="glass-card rounded-3xl p-5 shadow-genz flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-800 flex items-center gap-2">
+            <span>📂 หมวดหมู่กลุ่มงานและประสานงาน</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-0.5">
+            กดปุ่มขยายเพื่อดูรายการงานในแต่ละกลุ่ม (เมื่อขยายกลุ่มใด กลุ่มอื่นจะย่ออัตโนมัติ) และคลิกที่งานเพื่อดูรายละเอียด Pop-up
+          </p>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="relative flex-1 sm:w-64">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+            <input
+              type="text"
+              id="homeSearchInput"
+              oninput="renderHomeCategories()"
+              placeholder="ค้นหาชื่องาน หรือผู้รับผิดชอบ..."
+              class="w-full pl-9 pr-4 py-2 rounded-2xl bg-white/90 border border-sky-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-400"
+            />
+          </div>
+          <button onclick="refreshFromServer()" class="p-2.5 rounded-2xl bg-sky-100 hover:bg-sky-200 text-sky-700 transition" title="รีเฟรชข้อมูล">
+            <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Accordion List Container -->
+      <div id="homeAccordionContainer" class="space-y-3.5"></div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- TAB 2: LOG IN (ใส่เฉพาะรหัสผ่าน Staff = 'Takbat', Admin = 'Admin') -->
+    <!-- ================================================================== -->
+    <section id="tabContent-login" class="hidden">
+      <div class="max-w-md mx-auto glass-card rounded-3xl p-6 sm:p-8 shadow-genz mt-4">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 rounded-3xl bg-gradient-to-tr from-sky-400 to-indigo-400 text-white flex items-center justify-center mx-auto mb-4 shadow-lg shadow-sky-200">
+            <i data-lucide="lock-keyhole" class="w-8 h-8"></i>
+          </div>
+          <h2 class="text-xl font-bold text-slate-800">เข้าสู่ระบบทีมงานตักบาตร</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">
+            กรอกเฉพาะรหัสผ่านเพื่อเข้าถึงเมนูสำหรับ <span class="text-sky-600 font-semibold">Staff</span> หรือ <span class="text-indigo-600 font-semibold">Admin</span>
+          </p>
+        </div>
+
+        <!-- Logged-in State View -->
+        <div id="loggedInPanel" class="hidden text-center space-y-4">
+          <div class="p-4 rounded-2xl bg-sky-50 border border-sky-200">
+            <p class="text-xs text-slate-500">สถานะการเข้าสู่ระบบปัจจุบัน</p>
+            <p id="currentRoleText" class="text-lg font-bold text-sky-700 mt-0.5"></p>
+          </div>
+          <div class="flex gap-2 justify-center">
+            <button onclick="goToRoleTab()" class="flex-1 py-2.5 px-4 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-medium text-sm shadow-md hover:opacity-95 transition">
+              ไปยังหน้าจัดการงาน
+            </button>
+            <button onclick="handleLogout()" class="py-2.5 px-4 rounded-2xl bg-rose-50 hover:bg-rose-100 text-rose-600 font-medium text-sm border border-rose-200 transition">
+              ออกจากระบบ
+            </button>
+          </div>
+        </div>
+
+        <!-- Password Form -->
+        <form id="loginForm" onsubmit="handleLoginSubmit(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">
+              รหัสผ่าน (Password Only)
+            </label>
+            <div class="relative">
+              <input
+                type="password"
+                id="loginPasswordInput"
+                required
+                placeholder="กรอกรหัสผ่าน..."
+                class="w-full px-4 py-3 rounded-2xl bg-white border border-sky-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-400 text-base"
+              />
+              <button
+                type="button"
+                onclick="togglePasswordVisibility()"
+                class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-sky-600"
+              >
+                <i data-lucide="eye" id="eyeIcon" class="w-5 h-5"></i>
+              </button>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            id="loginSubmitBtn"
+            class="w-full py-3 rounded-2xl bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 text-white font-semibold shadow-lg shadow-sky-200 transition flex items-center justify-center gap-2"
+          >
+            <i data-lucide="log-in" class="w-4 h-4"></i>
+            <span>เข้าสู่ระบบ</span>
+          </button>
+        </form>
+
+        <div class="mt-6 pt-5 border-t border-sky-100 text-xs text-slate-500 space-y-1.5">
+          <div class="flex items-center justify-between">
+            <span>🔹 สิทธิ์ <b>Staff</b> (ดูและแก้ไขงานได้อย่างเดียว):</span>
+            <code class="px-2 py-0.5 rounded bg-sky-100 text-sky-800 font-semibold">Takbat</code>
+          </div>
+          <div class="flex items-center justify-between">
+            <span>🔹 สิทธิ์ <b>Admin</b> (เพิ่ม / แก้ไข / ลบได้ทั้งหมด):</span>
+            <code class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 font-semibold">Admin</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- TAB 3: STAFF (แสดงเมื่อรหัสผ่านเป็น Staff - เห็นงานทั้งหมด แก้ไขได้อย่างเดียว) -->
+    <!-- ================================================================== -->
+    <section id="tabContent-staff" class="hidden space-y-5">
+      <div class="glass-card rounded-3xl p-5 shadow-genz flex flex-col md:flex-row md:items-center justify-between gap-4 border-l-8 border-l-sky-400">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-100 text-sky-700 text-xs font-semibold mb-1">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+            <span>Staff Mode • แก้ไขข้อมูลได้อย่างเดียว</span>
+          </div>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-800">
+            ระบบจัดการและอัปเดตสถานะงาน (สำหรับเจ้าหน้าที่ Staff)
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500">
+            สามารถดูงานทั้งหมดและกดแก้ไขรายละเอียดงาน หรืออัปเดตสถานะความคืบหน้าได้ (ไม่สามารถเพิ่มหรือลบรายการ)
+          </p>
+        </div>
+
+        <!-- Filters -->
+        <div class="flex flex-wrap items-center gap-2">
+          <select id="staffCategoryFilter" onchange="renderStaffView()" class="px-3.5 py-2 rounded-2xl bg-white border border-sky-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-sky-400">
+            <option value="ALL">ทุกกลุ่มงาน</option>
+          </select>
+          <select id="staffStatusFilter" onchange="renderStaffView()" class="px-3.5 py-2 rounded-2xl bg-white border border-sky-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-sky-400">
+            <option value="ALL">ทุกสถานะ</option>
+            <option value="รอดำเนินการ">รอดำเนินการ</option>
+            <option value="กำลังดำเนินการ">กำลังดำเนินการ</option>
+            <option value="เสร็จแล้ว">เสร็จแล้ว</option>
+          </select>
+          <input
+            type="text"
+            id="staffSearchInput"
+            oninput="renderStaffView()"
+            placeholder="ค้นหางาน..."
+            class="px-3.5 py-2 rounded-2xl bg-white border border-sky-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-sky-400"
+          />
+        </div>
+      </div>
+
+      <!-- Staff Tasks Table / Cards -->
+      <div id="staffTasksContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- TAB 4: ADMIN (แสดงเมื่อรหัสผ่านเป็น Admin - เห็นงานทั้งหมด แก้ไข เพิ่ม ลบได้) -->
+    <!-- ================================================================== -->
+    <section id="tabContent-admin" class="hidden space-y-6">
+      <!-- Admin Header & Action Bar -->
+      <div class="glass-card rounded-3xl p-5 shadow-genz flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-l-8 border-l-indigo-500">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-semibold mb-1">
+            <i data-lucide="crown" class="w-3.5 h-3.5"></i>
+            <span>Admin Mode • จัดการข้อมูลได้เต็มรูปแบบ (เพิ่ม / แก้ไข / ลบ)</span>
+          </div>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-800">
+            ศูนย์บริหารงานตักบาตรพระหมื่นรูป กาญจนบุรี
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500">
+            จัดการหมวดหมู่กลุ่มงาน เพิ่มงานที่ต้องทำหรือประสาน และจัดการตารางผู้รับผิดชอบ
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <button onclick="openTaskModal(null)" class="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white text-xs sm:text-sm font-semibold shadow-md shadow-sky-200 flex items-center gap-1.5 transition">
+            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+            <span>เพิ่มงานใหม่</span>
+          </button>
+          <button onclick="openCategoryModal(null)" class="px-4 py-2.5 rounded-2xl bg-white hover:bg-sky-50 text-sky-700 border border-sky-200 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition">
+            <i data-lucide="folder-plus" class="w-4 h-4"></i>
+            <span>เพิ่มกลุ่มงาน</span>
+          </button>
+          <button onclick="openAssigneeModal(null)" class="px-4 py-2.5 rounded-2xl bg-white hover:bg-indigo-50 text-indigo-700 border border-indigo-200 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition">
+            <i data-lucide="user-plus" class="w-4 h-4"></i>
+            <span>เพิ่มผู้รับผิดชอบ</span>
+          </button>
+          <button onclick="triggerSetupSheets()" class="px-3.5 py-2.5 rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition" title="สร้างตารางและหัวคอลัมน์ใน Google Sheets อัตโนมัติ">
+            <i data-lucide="database" class="w-4 h-4"></i>
+            <span>สร้าง Sheet อัตโนมัติ</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Admin Sub-navigation (Tasks / Categories / Assignees) -->
+      <div class="flex items-center gap-2 border-b border-sky-200/80 pb-2 overflow-x-auto">
+        <button onclick="switchAdminSubTab('tasks')" id="adminSubBtn-tasks" class="px-4 py-2 rounded-2xl text-xs sm:text-sm font-semibold transition">
+          📋 รายการงานทั้งหมด
+        </button>
+        <button onclick="switchAdminSubTab('categories')" id="adminSubBtn-categories" class="px-4 py-2 rounded-2xl text-xs sm:text-sm font-semibold transition">
+          🗂️ จัดการกลุ่มงาน (Categories)
+        </button>
+        <button onclick="switchAdminSubTab('assignees')" id="adminSubBtn-assignees" class="px-4 py-2 rounded-2xl text-xs sm:text-sm font-semibold transition">
+          👥 ตารางผู้รับผิดชอบ (Assignees)
+        </button>
+      </div>
+
+      <!-- Admin Sub-view 1: Tasks Management -->
+      <div id="adminSubView-tasks" class="space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="flex flex-wrap items-center gap-2">
+            <select id="adminCategoryFilter" onchange="renderAdminTasks()" class="px-3.5 py-2 rounded-2xl bg-white border border-sky-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-sky-400">
+              <option value="ALL">ทุกกลุ่มงาน</option>
+            </select>
+            <select id="adminStatusFilter" onchange="renderAdminTasks()" class="px-3.5 py-2 rounded-2xl bg-white border border-sky-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-sky-400">
+              <option value="ALL">ทุกสถานะ</option>
+              <option value="รอดำเนินการ">รอดำเนินการ</option>
+              <option value="กำลังดำเนินการ">กำลังดำเนินการ</option>
+              <option value="เสร็จแล้ว">เสร็จแล้ว</option>
+            </select>
+          </div>
+          <input
+            type="text"
+            id="adminTaskSearch"
+            oninput="renderAdminTasks()"
+            placeholder="ค้นหาชื่องาน / รายละเอียด / ผู้รับผิดชอบ..."
+            class="w-full sm:w-72 px-4 py-2 rounded-2xl bg-white border border-sky-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-sky-400"
+          />
+        </div>
+
+        <div id="adminTasksContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+
+      <!-- Admin Sub-view 2: Categories Management -->
+      <div id="adminSubView-categories" class="hidden space-y-4">
+        <div id="adminCategoriesContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </div>
+
+      <!-- Admin Sub-view 3: Assignees Table Management -->
+      <div id="adminSubView-assignees" class="hidden space-y-4">
+        <div class="glass-card rounded-3xl overflow-hidden shadow-genz">
+          <div class="p-4 sm:p-5 border-b border-sky-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h3 class="font-bold text-slate-800">ตารางรายชื่อผู้รับผิดชอบงาน</h3>
+              <p class="text-xs text-slate-500">ข้อมูลชื่อ-สกุล เบอร์โทรศัพท์ และ LINE ID สำหรับเชื่อมโยงกับงานที่ต้องประสาน</p>
+            </div>
+            <button onclick="openAssigneeModal(null)" class="px-4 py-2 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white text-xs font-semibold flex items-center gap-1.5 self-start sm:self-auto">
+              <i data-lucide="user-plus" class="w-4 h-4"></i>
+              <span>เพิ่มผู้รับผิดชอบ</span>
+            </button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-sky-50/90 text-sky-900 text-xs uppercase tracking-wider">
+                  <th class="py-3.5 px-4 font-semibold">รหัส</th>
+                  <th class="py-3.5 px-4 font-semibold">ชื่อ / สกุล</th>
+                  <th class="py-3.5 px-4 font-semibold">เบอร์โทรศัพท์</th>
+                  <th class="py-3.5 px-4 font-semibold">LINE ID</th>
+                  <th class="py-3.5 px-4 font-semibold text-right">จัดการ</th>
+                </tr>
+              </thead>
+              <tbody id="adminAssigneesTableBody" class="divide-y divide-sky-100 text-sm"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================================================================== -->
+  <!-- MODAL 1: TASK DETAIL POP-UP (เมื่อคลิกงานในหน้า Home หรือดูรายละเอียด) -->
+  <!-- ==================================================================== -->
+  <div id="taskDetailModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-pop border border-sky-100 animate-in fade-in zoom-in-95 duration-200">
+      <div class="flex items-start justify-between gap-3 mb-4">
+        <div>
+          <span id="detailTaskCategoryBadge" class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-sky-100 text-sky-700 text-xs font-semibold"></span>
+          <h3 id="detailTaskTitle" class="text-lg sm:text-xl font-bold text-slate-800 mt-2"></h3>
+        </div>
+        <button onclick="closeModal('taskDetailModal')" class="p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-sm">
+        <div class="flex flex-wrap items-center justify-between gap-2 p-3.5 rounded-2xl bg-sky-50/70 border border-sky-100">
+          <div>
+            <span class="text-xs text-slate-500 block">สถานะงาน</span>
+            <div id="detailTaskStatusBadge" class="mt-1"></div>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-slate-500 block">วันที่ต้องทำให้เสร็จ</span>
+            <span id="detailTaskDueDate" class="font-semibold text-slate-800"></span>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">รายละเอียดงาน</p>
+          <div id="detailTaskDescription" class="p-3.5 rounded-2xl bg-slate-50 text-slate-700 whitespace-pre-line leading-relaxed"></div>
+        </div>
+
+        <div class="p-3.5 rounded-2xl bg-indigo-50/60 border border-indigo-100">
+          <p class="text-xs font-semibold uppercase tracking-wider text-indigo-500 mb-1.5">ผู้รับผิดชอบประสานงาน</p>
+          <div id="detailTaskAssigneeInfo" class="text-slate-700 space-y-1"></div>
+        </div>
+
+        <div id="detailTaskLinkWrapper" class="hidden">
+          <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">ลิงก์ที่เกี่ยวข้อง</p>
+          <a id="detailTaskLink" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-sky-100 hover:bg-sky-200 text-sky-700 font-medium text-xs sm:text-sm transition break-all">
+            <i data-lucide="external-link" class="w-4 h-4 shrink-0"></i>
+            <span id="detailTaskLinkText">เปิดลิงก์เอกสาร/แผนที่</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-end gap-2">
+        <button id="detailEditBtn" onclick="" class="hidden px-4 py-2 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition">
+          <i data-lucide="edit-3" class="w-4 h-4"></i>
+          <span>แก้ไขงานนี้</span>
+        </button>
+        <button onclick="closeModal('taskDetailModal')" class="px-5 py-2 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium transition">
+          ปิดหน้าต่าง
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- MODAL 2: ADD / EDIT TASK (พร้อมช่องค้นหาผู้รับผิดชอบแบบพิมพ์ค้นหาได้) -->
+  <!-- ==================================================================== -->
+  <div id="taskFormModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-xl w-full p-6 shadow-pop border border-sky-100 my-8">
+      <div class="flex items-center justify-between mb-4">
+        <h3 id="taskFormModalTitle" class="text-lg font-bold text-slate-800">เพิ่มงานที่ต้องทำหรือประสาน</h3>
+        <button onclick="closeModal('taskFormModal')" class="p-2 rounded-full hover:bg-slate-100 text-slate-400">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="taskForm" onsubmit="handleTaskFormSubmit(event)" class="space-y-4 text-sm">
+        <input type="hidden" id="taskFormId" />
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">กลุ่มงาน *</label>
+            <select id="taskFormCategory" required class="w-full px-3.5 py-2.5 rounded-2xl border border-sky-200 bg-sky-50/40 focus:outline-none focus:ring-2 focus:ring-sky-400"></select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">สถานะงาน *</label>
+            <select id="taskFormStatus" required class="w-full px-3.5 py-2.5 rounded-2xl border border-sky-200 bg-sky-50/40 focus:outline-none focus:ring-2 focus:ring-sky-400">
+              <option value="รอดำเนินการ">🟡 รอดำเนินการ</option>
+              <option value="กำลังดำเนินการ">🔵 กำลังดำเนินการ</option>
+              <option value="เสร็จแล้ว">🟢 เสร็จแล้ว</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">ชื่องาน *</label>
+          <input type="text" id="taskFormTitle" required placeholder="ระบุชื่องานที่ต้องทำหรือประสาน..." class="w-full px-3.5 py-2.5 rounded-2xl border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">วันที่ต้องทำให้เสร็จ *</label>
+            <input type="date" id="taskFormDueDate" required class="w-full px-3.5 py-2.5 rounded-2xl border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400" />
+          </div>
+
+          <!-- Searchable Assignee Picker -->
+          <div class="relative">
+            <label class="block text-xs font-semibold text-slate-600 mb-1">ผู้รับผิดชอบ (พิมพ์ค้นหาได้)</label>
+            <input type="hidden" id="taskFormAssigneeId" />
+            <div class="relative">
+              <input
+                type="text"
+                id="assigneeSearchInput"
+                autocomplete="off"
+                onfocus="showAssigneeDropdown()"
+                oninput="filterAssigneeDropdown()"
+                placeholder="พิมพ์ชื่อ, เบอร์โทร หรือ Line ID..."
+                class="w-full pl-3.5 pr-8 py-2.5 rounded-2xl border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400"
+              />
+              <button type="button" onclick="clearSelectedAssignee()" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-rose-500" title="ล้างค่า">
+                <i data-lucide="x-circle" class="w-4 h-4"></i>
+              </button>
+            </div>
+            <!-- Dropdown List -->
+            <div id="assigneeDropdownList" class="hidden absolute z-50 left-0 right-0 mt-1 max-h-48 overflow-y-auto bg-white rounded-2xl shadow-lg border border-sky-200 divide-y divide-sky-50"></div>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">รายละเอียดงาน</label>
+          <textarea id="taskFormDetails" rows="3" placeholder="รายละเอียดการประสานงาน ขั้นตอน หรือหมายเหตุ..." class="w-full px-3.5 py-2.5 rounded-2xl border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Link ที่เกี่ยวข้อง (Google Drive, แผนที่, Canva ฯลฯ)</label>
+          <input type="url" id="taskFormLink" placeholder="https://..." class="w-full px-3.5 py-2.5 rounded-2xl border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400" />
+        </div>
+
+        <div class="pt-3 flex items-center justify-end gap-2">
+          <button type="button" onclick="closeModal('taskFormModal')" class="px-4 py-2.5 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium">
+            ยกเลิก
+          </button>
+          <button type="submit" class="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold shadow-md shadow-sky-200">
+            บันทึกข้อมูลงาน
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- MODAL 3: ADD / EDIT CATEGORY (กลุ่มงาน) -->
+  <!-- ==================================================================== -->
+  <div id="categoryFormModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-pop border border-sky-100">
+      <div class="flex items-center justify-between mb-4">
+        <h3 id="categoryModalTitle" class="text-lg font-bold text-slate-800">จัดการกลุ่มงาน</h3>
+        <button onclick="closeModal('categoryFormModal')" class="p-2 rounded-full hover:bg-slate-100 text-slate-400">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="categoryForm" onsubmit="handleCategoryFormSubmit(event)" class="space-y-4 text-sm">
+        <input type="hidden" id="catFormId" />
+        <div class="grid grid-cols-4 gap-3">
+          <div class="col-span-1">
+            <label class="block text-xs font-semibold text-slate-600 mb-1">ไอคอน</label>
+            <input type="text" id="catFormIcon" value="🙏" maxlength="4" class="w-full text-center text-xl py-2 rounded-2xl border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400" />
+          </div>
+          <div class="col-span-3">
+            <label class="block text-xs font-semibold text-slate-600 mb-1">ชื่อกลุ่มงาน *</label>
+            <input type="text" id="catFormName" required placeholder="เช่น งานสถานที่, นิมนต์พระ..." class="w-full px-3.5 py-2.5 rounded-2xl border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">คำอธิบายกลุ่มงาน</label>
+          <textarea id="catFormDesc" rows="2" placeholder="รายละเอียดขอบเขตของกลุ่มงานนี้..." class="w-full px-3.5 py-2.5 rounded-2xl border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400"></textarea>
+        </div>
+
+        <div class="pt-2 flex justify-end gap-2">
+          <button type="button" onclick="closeModal('categoryFormModal')" class="px-4 py-2 rounded-2xl bg-slate-100 text-slate-700 font-medium">ยกเลิก</button>
+          <button type="submit" class="px-5 py-2 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white font-semibold">บันทึกกลุ่มงาน</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- MODAL 4: ADD / EDIT ASSIGNEE (ตารางผู้รับผิดชอบ) -->
+  <!-- ==================================================================== -->
+  <div id="assigneeFormModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-pop border border-sky-100">
+      <div class="flex items-center justify-between mb-4">
+        <h3 id="assigneeModalTitle" class="text-lg font-bold text-slate-800">ข้อมูลผู้รับผิดชอบ</h3>
+        <button onclick="closeModal('assigneeFormModal')" class="p-2 rounded-full hover:bg-slate-100 text-slate-400">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="assigneeForm" onsubmit="handleAssigneeFormSubmit(event)" class="space-y-4 text-sm">
+        <input type="hidden" id="empFormId" />
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">ชื่อ - นามสกุล *</label>
+          <input type="text" id="empFormName" required placeholder="เช่น กัลฯ สมชาย ใจบุญ" class="w-full px-3.5 py-2.5 rounded-2xl border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">เบอร์โทรศัพท์ *</label>
+          <input type="text" id="empFormPhone" required placeholder="เช่น 081-234-5678" class="w-full px-3.5 py-2.5 rounded-2xl border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">LINE ID</label>
+          <input type="text" id="empFormLine" placeholder="ระบุ Line ID สำหรับติดต่อประสานงาน" class="w-full px-3.5 py-2.5 rounded-2xl border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400" />
+        </div>
+
+        <div class="pt-2 flex justify-end gap-2">
+          <button type="button" onclick="closeModal('assigneeFormModal')" class="px-4 py-2 rounded-2xl bg-slate-100 text-slate-700 font-medium">ยกเลิก</button>
+          <button type="submit" class="px-5 py-2 rounded-2xl bg-indigo-500 hover:bg-indigo-600 text-white font-semibold">บันทึกผู้รับผิดชอบ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- MODAL 5: GAS API URL SETTINGS (สำหรับตั้งค่า Web App URL บน Vercel) -->
+  <!-- ==================================================================== -->
+  <div id="apiConfigModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-pop border border-sky-100">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+          <i data-lucide="cloud-cog" class="w-5 h-5 text-sky-500"></i>
+          <span>ตั้งค่าการเชื่อมต่อ Google Apps Script API</span>
+        </h3>
+        <button onclick="closeModal('apiConfigModal')" class="p-2 rounded-full hover:bg-slate-100 text-slate-400">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-xs text-slate-500 mb-4 leading-relaxed">
+        นำลิงก์ <b>Web App URL</b> (`https://script.google.com/macros/s/AKfycbwaPula_ivxob1l2P1rIdYs0g6hFu9bCdYl_67hGU-AueODbkHmqH2BePe2R2eTQjRN/exec`) ที่ได้จากการ Deploy ไฟล์ <code>Code.gs</code> มาวางที่นี่ หรือแก้ไขที่ตัวแปร <code>APP_CONFIG.GAS_WEB_APP_URL</code> ในไฟล์ <code>index.html</code> ก่อนอัปโหลดขึ้น Vercel
+      </p>
+      <div class="space-y-3 text-sm">
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Google Apps Script Web App URL</label>
+          <input
+            type="url"
+            id="apiConfigUrlInput"
+            placeholder="https://script.google.com/macros/s/AKfycb.../exec"
+            class="w-full px-3.5 py-2.5 rounded-2xl border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400 text-xs sm:text-sm"
+          />
+        </div>
+        <div class="p-3 rounded-2xl bg-sky-50 text-xs text-sky-900 space-y-1">
+          <p class="font-semibold">📌 Google Sheets ที่ผูกไว้ใน Code.gs:</p>
+          <p>• Sheet งานที่ต้องทำ: <code>12KkZZLKbU5MkQwtQp6uuvcXOxsdsKnZDIO7kK6GUSFI</code></p>
+          <p>• Sheet รหัสผ่าน: <code>1HT2f9q5js4oQwEZxAy9lDlK_jtUjO7zQXG9OKPfzvYY</code></p>
+        </div>
+      </div>
+      <div class="mt-5 flex flex-wrap items-center justify-between gap-2">
+        <button onclick="triggerSetupSheets()" class="px-3.5 py-2 rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 text-xs font-semibold">
+          สั่งสร้างตารางใน Sheet อัตโนมัติ (Setup)
+        </button>
+        <div class="flex gap-2">
+          <button onclick="closeModal('apiConfigModal')" class="px-4 py-2 rounded-2xl bg-slate-100 text-slate-700 text-xs sm:text-sm font-medium">ปิด</button>
+          <button onclick="saveApiConfigUrl()" class="px-5 py-2 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white text-xs sm:text-sm font-semibold">บันทึกและซิงค์ข้อมูล</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- ==================================================================== -->
+  <!-- JAVASCRIPT LOGIC & CONFIGURATION SET -->
+  <!-- ==================================================================== -->
+  <script>
+    /**
+     * ========================================================================
+     * 1. FRONTEND CONFIGURATION SET (ตั้งค่าตัวแปรแยกเป็นสัดส่วน แก้ไขสะดวก)
+     * ========================================================================
+     */
+    const APP_CONFIG = {
+      APP_NAME: 'งานที่ต้องทำและประสาน งานตักบาตรพระหมื่นรูป กาญจนบุรี',
+
+      // ใส่ URL ที่ได้จากการ Deploy Google Apps Script (Web App URL) ที่นี่
+      GAS_WEB_APP_URL: localStorage.getItem('TAKBAT_GAS_URL') || '',
+
+      // รหัส Google Sheets อ้างอิง
+      DATA_SHEET_ID: '12KkZZLKbU5MkQwtQp6uuvcXOxsdsKnZDIO7kK6GUSFI',
+      AUTH_SHEET_ID: '1HT2f9q5js4oQwEZxAy9lDlK_jtUjO7zQXG9OKPfzvYY',
+
+      // รหัสผ่านมาตรฐานกรณีทดสอบในโหมด Demo
+      FALLBACK_PASSWORDS: {
+        STAFF: 'Takbat',
+        ADMIN: 'Admin'
+      },
+
+      // การแยกสีของสถานะงาน (รอดำเนินการ, กำลังดำเนินการ, เสร็จแล้ว)
+      STATUS_STYLES: {
+        'รอดำเนินการ': {
+          badgeBg: 'bg-amber-100 text-amber-800 border-amber-300',
+          dotColor: 'bg-amber-500',
+          cardBorder: 'border-l-4 border-l-amber-400',
+          icon: 'clock'
+        },
+        'กำลังดำเนินการ': {
+          badgeBg: 'bg-sky-100 text-sky-800 border-sky-300',
+          dotColor: 'bg-sky-500',
+          cardBorder: 'border-l-4 border-l-sky-500',
+          icon: 'loader'
+        },
+        'เสร็จแล้ว': {
+          badgeBg: 'bg-emerald-100 text-emerald-800 border-emerald-300',
+          dotColor: 'bg-emerald-500',
+          cardBorder: 'border-l-4 border-l-emerald-500',
+          icon: 'check-circle-2'
+        }
+      }
+    };
+
+    /**
+     * ========================================================================
+     * 2. APPLICATION STATE (สถานะของระบบและข้อมูลเริ่มต้น)
+     * ========================================================================
+     */
+    const STATE = {
+      activeTab: 'home',
+      adminSubTab: 'tasks',
+      expandedCategoryId: 'CAT-01', // เก็บ ID ของกลุ่มงานที่กำลังขยายในหน้า Home (ขยายทีละกลุ่ม)
+      auth: {
+        isLoggedIn: false,
+        role: null, // 'Staff' | 'Admin' | null
+        password: ''
+      },
+      categories: [
+        { id: 'CAT-01', name: 'งานสถานที่', description: 'จัดเตรียมสถานที่ ผังงาน เต็นท์ โต๊ะ เก้าอี้ เครื่องเสียง', icon: '⛺' },
+        { id: 'CAT-02', name: 'นิมนต์พระ', description: 'ประสานงานนิมนต์พระภิกษุสงฆ์ 10,000 รูป และจุดพักค้าง', icon: '🙏' },
+        { id: 'CAT-03', name: 'เชิญสาธุชนร่วมงาน', description: 'ประชาสัมพันธ์ เชิญชวนสาธุชน หน่วยงานราชการ และเอกชน', icon: '📢' },
+        { id: 'CAT-04', name: 'งานต้อนรับและปฏิสันถาร', description: 'ดูแลต้อนรับพระเถระ แขกผู้ใหญ่ และสาธุชน', icon: '🌸' },
+        { id: 'CAT-05', name: 'งานภัตตาหารและไทยธรรม', description: 'จัดเตรียมภัตตาหาร น้ำปานะ และชุดไทยธรรมถวายพระ', icon: '🍱' },
+        { id: 'CAT-06', name: 'งานจราจรและยานพาหนะ', description: 'จัดระเบียบการจราจร จุดจอดรถ และการเดินทาง', icon: '🚌' }
+      ],
+      assignees: [
+        { id: 'EMP-01', fullName: 'กัลฯ สมชาย ใจบุญ', phone: '081-234-5678', lineId: 'somchai_tb' },
+        { id: 'EMP-02', fullName: 'กัลฯ มณีรัตน์ สายบุญ', phone: '089-876-5432', lineId: 'maneerat.k' },
+        { id: 'EMP-03', fullName: 'กัลฯ วรพล คนกาญจน์', phone: '086-111-2233', lineId: 'worapol_kan' }
+      ],
+      tasks: [
+        {
+          id: 'TSK-01',
+          categoryId: 'CAT-01',
+          title: 'สำรวจพื้นที่และวางผังจุดวางบาตรพระ 10,000 รูป',
+          dueDate: '2026-11-10',
+          details: 'วัดระยะพื้นที่ถนนและจัดทำผังจุดนั่งของพระภิกษุและสาธุชน พร้อมจุดติดตั้งเครื่องเสียง',
+          assigneeId: 'EMP-03',
+          link: 'https://maps.google.com',
+          status: 'กำลังดำเนินการ'
+        },
+        {
+          id: 'TSK-02',
+          categoryId: 'CAT-02',
+          title: 'ส่งฎีกานิมนต์พระภิกษุในจังหวัดกาญจนบุรีและจังหวัดใกล้เคียง',
+          dueDate: '2026-11-15',
+          details: 'ประสานงานเจ้าคณะจังหวัดและเจ้าคณะอำเภอเพื่อส่งหนังสือฎีกานิมนต์และยืนยันจำนวนพระ',
+          assigneeId: 'EMP-01',
+          link: '',
+          status: 'กำลังดำเนินการ'
+        },
+        {
+          id: 'TSK-03',
+          categoryId: 'CAT-03',
+          title: 'ออกแบบป้ายไวนิลและสื่อประชาสัมพันธ์ออนไลน์',
+          dueDate: '2026-11-05',
+          details: 'ทำภาพโปสเตอร์สำหรับแชร์ใน Line และ Facebook เพจงานตักบาตรพระหมื่นรูป',
+          assigneeId: 'EMP-02',
+          link: 'https://www.canva.com',
+          status: 'เสร็จแล้ว'
+        },
+        {
+          id: 'TSK-04',
+          categoryId: 'CAT-01',
+          title: 'ประสานงานขออนุญาตใช้พื้นที่และรถสุขาเคลื่อนที่',
+          dueDate: '2026-11-20',
+          details: 'ยื่นหนังสือขอความอนุเคราะห์เทศบาลและ อบจ. กาญจนบุรี เรื่องรถสุขาและไฟฟ้าส่องสว่าง',
+          assigneeId: 'EMP-03',
+          link: '',
+          status: 'รอดำเนินการ'
+        }
+      ]
+    };
+
+    /**
+     * ========================================================================
+     * 3. API CLIENT (เชื่อมต่อกับ Google Apps Script ContentService JSON)
+     * ========================================================================
+     */
+    async function callGasApi(action, payload = {}) {
+      const apiUrl = APP_CONFIG.GAS_WEB_APP_URL.trim();
+      if (!apiUrl) {
+        // โหมดจำลองข้อมูลภายในเครื่องหากยังไม่ได้ใส่ URL
+        return simulateLocalApi(action, payload);
+      }
+
+      const bodyData = JSON.stringify({
+        action,
+        password: STATE.auth.password,
+        ...payload
+      });
+
+      // ใช้ Content-Type: text/plain เพื่อไม่ให้เกิด CORS preflight block กับ Google Apps Script
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: bodyData,
+        redirect: 'follow'
+      });
+
+      const json = await response.json();
+      if (json.status !== 'success') {
+        throw new Error(json.message || 'เกิดข้อผิดพลาดจากเซิร์ฟเวอร์');
+      }
+      return json.data;
+    }
+
+    async function refreshFromServer() {
+      const apiUrl = APP_CONFIG.GAS_WEB_APP_URL.trim();
+      document.getElementById('demoBanner').classList.toggle('hidden', Boolean(apiUrl));
+
+      if (!apiUrl) {
+        renderAllViews();
+        return;
+      }
+
+      try {
+        showToast('กำลังโหลดข้อมูลล่าสุดจาก Google Sheets...', 'info');
+        const data = await callGasApi('getAllData');
+        applyServerData(data);
+        showToast('อัปเดตข้อมูลสำเร็จ', 'success');
+      } catch (err) {
+        showToast('ไม่สามารถดึงข้อมูลจาก GAS: ' + err.message, 'error');
+        renderAllViews();
+      }
+    }
+
+    function applyServerData(data) {
+      if (!data) return;
+      if (Array.isArray(data.categories)) STATE.categories = data.categories;
+      if (Array.isArray(data.tasks)) STATE.tasks = data.tasks;
+      if (Array.isArray(data.assignees)) STATE.assignees = data.assignees;
+      if (STATE.categories.length > 0 && !STATE.expandedCategoryId) {
+        STATE.expandedCategoryId = STATE.categories[0].id;
+      }
+      renderAllViews();
+    }
+
+    /**
+     * โหมดจำลองการทำงานเมื่อยังไม่ได้ตั้งค่า Web App URL (ช่วยให้ทดสอบบน Vercel ได้ทันที)
+     */
+    function simulateLocalApi(action, payload) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (action === 'login') {
+            const pwd = String(payload.password || '').trim();
+            if (pwd === APP_CONFIG.FALLBACK_PASSWORDS.ADMIN) {
+              return resolve({ authenticated: true, role: 'Admin' });
+            }
+            if (pwd === APP_CONFIG.FALLBACK_PASSWORDS.STAFF) {
+              return resolve({ authenticated: true, role: 'Staff' });
+            }
+            return reject(new Error('รหัสผ่านไม่ถูกต้อง (ลองใช้ Takbat หรือ Admin)'));
+          }
+
+          if (action === 'addTask') {
+            const newTask = { ...payload.task, id: 'TSK-' + Math.random().toString(36).substring(2, 7).toUpperCase() };
+            STATE.tasks.push(newTask);
+            return resolve({ allData: STATE });
+          }
+
+          if (action === 'updateTask') {
+            const idx = STATE.tasks.findIndex(t => t.id === payload.task.id);
+            if (idx !== -1) STATE.tasks[idx] = { ...STATE.tasks[idx], ...payload.task };
+            return resolve({ allData: STATE });
+          }
+
+          if (action === 'deleteTask') {
+            STATE.tasks = STATE.tasks.filter(t => t.id !== payload.id);
+            return resolve({ allData: STATE });
+          }
+
+          if (action === 'addCategory') {
+            const newCat = { ...payload.category, id: 'CAT-' + Math.random().toString(36).substring(2, 7).toUpperCase() };
+            STATE.categories.push(newCat);
+            return resolve({ allData: STATE });
+          }
+
+          if (action === 'updateCategory') {
+            const idx = STATE.categories.findIndex(c => c.id === payload.category.id);
+            if (idx !== -1) STATE.categories[idx] = { ...STATE.categories[idx], ...payload.category };
+            return resolve({ allData: STATE });
+          }
+
+          if (action === 'deleteCategory') {
+            STATE.categories = STATE.categories.filter(c => c.id !== payload.id);
+            STATE.tasks = STATE.tasks.filter(t => t.categoryId !== payload.id);
+            return resolve({ allData: STATE });
+          }
+
+          if (action === 'addAssignee') {
+            const newEmp = { ...payload.assignee, id: 'EMP-' + Math.random().toString(36).substring(2, 7).toUpperCase() };
+            STATE.assignees.push(newEmp);
+            return resolve({ allData: STATE });
+          }
+
+          if (action === 'updateAssignee') {
+            const idx = STATE.assignees.findIndex(a => a.id === payload.assignee.id);
+            if (idx !== -1) STATE.assignees[idx] = { ...STATE.assignees[idx], ...payload.assignee };
+            return resolve({ allData: STATE });
+          }
+
+          if (action === 'deleteAssignee') {
+            STATE.assignees = STATE.assignees.filter(a => a.id !== payload.id);
+            return resolve({ allData: STATE });
+          }
+
+          resolve(STATE);
+        }, 200);
+      });
+    }
+
+    /**
+     * ========================================================================
+     * 4. UI RENDERING (Home Accordion, Pop-up, Staff View, Admin View)
+     * ========================================================================
+     */
+    function renderAllViews() {
+      renderStats();
+      populateCategorySelects();
+      renderNavigationState();
+      renderHomeCategories();
+      renderStaffView();
+      renderAdminTasks();
+      renderAdminCategories();
+      renderAdminAssignees();
+      lucide.createIcons();
+    }
+
+    function renderStats() {
+      document.getElementById('statCategories').textContent = STATE.categories.length;
+      document.getElementById('statPending').textContent = STATE.tasks.filter(t => t.status === 'รอดำเนินการ').length;
+      document.getElementById('statInProgress').textContent = STATE.tasks.filter(t => t.status === 'กำลังดำเนินการ').length;
+      document.getElementById('statCompleted').textContent = STATE.tasks.filter(t => t.status === 'เสร็จแล้ว').length;
+    }
+
+    function populateCategorySelects() {
+      const optionsHtml = '<option value="ALL">ทุกกลุ่มงาน</option>' +
+        STATE.categories.map(c => `<option value="${escapeHtml(c.id)}">${escapeHtml(c.icon || '📁')} ${escapeHtml(c.name)}</option>`).join('');
+
+      const staffSel = document.getElementById('staffCategoryFilter');
+      const adminSel = document.getElementById('adminCategoryFilter');
+      const prevStaff = staffSel.value || 'ALL';
+      const prevAdmin = adminSel.value || 'ALL';
+
+      staffSel.innerHTML = optionsHtml;
+      adminSel.innerHTML = optionsHtml;
+      staffSel.value = prevStaff;
+      adminSel.value = prevAdmin;
+
+      const formCatSel = document.getElementById('taskFormCategory');
+      formCatSel.innerHTML = STATE.categories
+        .map(c => `<option value="${escapeHtml(c.id)}">${escapeHtml(c.icon || '📁')} ${escapeHtml(c.name)}</option>`)
+        .join('');
+    }
+
+    /**
+     * แสดงกลุ่มงานในหน้า Home พร้อมระบบ Accordion (ขยายกลุ่มใด กลุ่มอื่นย่ออัตโนมัติ)
+     */
+    function renderHomeCategories() {
+      const container = document.getElementById('homeAccordionContainer');
+      const keyword = (document.getElementById('homeSearchInput').value || '').trim().toLowerCase();
+
+      if (STATE.categories.length === 0) {
+        container.innerHTML = `
+          <div class="glass-card rounded-3xl p-10 text-center text-slate-500">
+            ยังไม่มีกลุ่มงานในระบบ
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = STATE.categories.map(cat => {
+        const isExpanded = STATE.expandedCategoryId === cat.id;
+        const catTasks = STATE.tasks.filter(t => {
+          if (t.categoryId !== cat.id) return false;
+          if (!keyword) return true;
+          const emp = getAssigneeById(t.assigneeId);
+          const empName = emp ? emp.fullName.toLowerCase() : '';
+          return (
+            t.title.toLowerCase().includes(keyword) ||
+            (t.details || '').toLowerCase().includes(keyword) ||
+            empName.includes(keyword)
+          );
+        });
+
+        const completedCount = catTasks.filter(t => t.status === 'เสร็จแล้ว').length;
+
+        return `
+          <div class="glass-card rounded-3xl overflow-hidden shadow-genz transition-all duration-300 ${isExpanded ? 'ring-2 ring-sky-400/80' : 'hover:border-sky-300'}">
+            <!-- Category Accordion Header -->
+            <div
+              onclick="toggleHomeCategory('${escapeHtml(cat.id)}')"
+              class="p-4 sm:p-5 cursor-pointer flex items-center justify-between gap-4 select-none ${isExpanded ? 'bg-gradient-to-r from-sky-50/90 via-blue-50/60 to-indigo-50/50 border-b border-sky-100' : ''}"
+            >
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-sky-100/90 border border-sky-200 flex items-center justify-center text-2xl shrink-0">
+                  ${escapeHtml(cat.icon || '📁')}
+                </div>
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <h3 class="text-base sm:text-lg font-bold text-slate-800">${escapeHtml(cat.name)}</h3>
+                    <span class="px-2.5 py-0.5 text-xs font-semibold rounded-full bg-sky-100 text-sky-700">
+                      ${catTasks.length} งาน
+                    </span>
+                    <span class="px-2.5 py-0.5 text-xs font-medium rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                      เสร็จแล้ว ${completedCount}/${catTasks.length}
+                    </span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-slate-500 mt-0.5">${escapeHtml(cat.description || '')}</p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                class="px-3.5 py-2 rounded-2xl text-xs font-semibold flex items-center gap-1.5 transition shrink-0 ${
+                  isExpanded
+                    ? 'bg-sky-500 text-white shadow-sm'
+                    : 'bg-sky-100/80 hover:bg-sky-200 text-sky-800'
+                }"
+              >
+                <span>${isExpanded ? 'ย่อเก็บ' : 'ขยายดูงาน'}</span>
+                <i data-lucide="${isExpanded ? 'chevron-up' : 'chevron-down'}" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- Category Tasks Body (แสดงเมื่อขยาย) -->
+            <div class="${isExpanded ? 'block' : 'hidden'} p-4 sm:p-5 bg-white/60">
+              ${
+                catTasks.length === 0
+                  ? `<div class="text-center py-6 text-sm text-slate-400">ยังไม่มีรายการงานในหมวดหมู่นี้</div>`
+                  : `<div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                      ${catTasks.map(task => renderHomeTaskCard(task)).join('')}
+                    </div>`
+              }
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    /**
+     * สลับการขยายกลุ่มงานในหน้า Home (ขยายกลุ่มที่คลิก และพับกลุ่มอื่นอัตโนมัติ)
+     */
+    function toggleHomeCategory(categoryId) {
+      if (STATE.expandedCategoryId === categoryId) {
+        STATE.expandedCategoryId = null;
+      } else {
+        STATE.expandedCategoryId = categoryId;
+      }
+      renderHomeCategories();
+    }
+
+    function renderHomeTaskCard(task) {
+      const style = APP_CONFIG.STATUS_STYLES[task.status] || APP_CONFIG.STATUS_STYLES['รอดำเนินการ'];
+      const emp = getAssigneeById(task.assigneeId);
+
+      return `
+        <div
+          onclick="openTaskDetailPopup('${escapeHtml(task.id)}')"
+          class="group cursor-pointer bg-white hover:bg-sky-50/50 rounded-2xl p-4 border border-sky-100 hover:border-sky-300 shadow-sm hover:shadow-md transition-all ${style.cardBorder}"
+        >
+          <div class="flex items-start justify-between gap-2 mb-2">
+            <h4 class="font-bold text-slate-800 group-hover:text-sky-700 transition line-clamp-1">
+              ${escapeHtml(task.title)}
+            </h4>
+            ${renderStatusBadge(task.status)}
+          </div>
+
+          <p class="text-xs text-slate-500 line-clamp-2 mb-3">
+            ${escapeHtml(task.details || 'คลิกเพื่อดูรายละเอียดเพิ่มเติม')}
+          </p>
+
+          <div class="flex items-center justify-between text-xs text-slate-500 pt-2.5 border-t border-slate-100">
+            <span class="flex items-center gap-1.5 font-medium text-slate-600">
+              <i data-lucide="user-check" class="w-3.5 h-3.5 text-sky-500"></i>
+              ${emp ? escapeHtml(emp.fullName) : 'ยังไม่ระบุผู้รับผิดชอบ'}
+            </span>
+            <span class="flex items-center gap-1 text-slate-500">
+              <i data-lucide="calendar" class="w-3.5 h-3.5 text-indigo-400"></i>
+              ${formatThaiDate(task.dueDate)}
+            </span>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderStatusBadge(status) {
+      const style = APP_CONFIG.STATUS_STYLES[status] || APP_CONFIG.STATUS_STYLES['รอดำเนินการ'];
+      return `
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold border shrink-0 ${style.badgeBg}">
+          <span class="w-1.5 h-1.5 rounded-full ${style.dotColor}"></span>
+          ${escapeHtml(status)}
+        </span>
+      `;
+    }
+
+    /**
+     * แสดง Pop-up รายละเอียดงานเมื่อคลิกที่งาน
+     */
+    function openTaskDetailPopup(taskId) {
+      const task = STATE.tasks.find(t => t.id === taskId);
+      if (!task) return;
+
+      const cat = STATE.categories.find(c => c.id === task.categoryId);
+      const emp = getAssigneeById(task.assigneeId);
+
+      document.getElementById('detailTaskCategoryBadge').textContent = cat
+        ? `${cat.icon || '📁'} ${cat.name}`
+        : 'ไม่ระบุกลุ่มงาน';
+      document.getElementById('detailTaskTitle').textContent = task.title;
+      document.getElementById('detailTaskStatusBadge').innerHTML = renderStatusBadge(task.status);
+      document.getElementById('detailTaskDueDate').textContent = formatThaiDate(task.dueDate);
+      document.getElementById('detailTaskDescription').textContent = task.details || '- ไม่มีรายละเอียดเพิ่มเติม -';
+
+      if (emp) {
+        document.getElementById('detailTaskAssigneeInfo').innerHTML = `
+          <div class="font-bold text-slate-800">${escapeHtml(emp.fullName)}</div>
+          <div class="text-xs text-slate-600 flex flex-wrap gap-3 mt-1">
+            <span>📞 โทร: <b>${escapeHtml(emp.phone || '-')}</b></span>
+            <span>💬 LINE ID: <b>${escapeHtml(emp.lineId || '-')}</b></span>
+          </div>
+        `;
+      } else {
+        document.getElementById('detailTaskAssigneeInfo').innerHTML = `<span class="text-xs text-slate-400">ยังไม่ได้ระบุผู้รับผิดชอบ</span>`;
+      }
+
+      const linkWrapper = document.getElementById('detailTaskLinkWrapper');
+      const linkEl = document.getElementById('detailTaskLink');
+      const linkText = document.getElementById('detailTaskLinkText');
+      if (task.link && task.link.trim() !== '') {
+        linkWrapper.classList.remove('hidden');
+        linkEl.href = task.link;
+        linkText.textContent = task.link;
+      } else {
+        linkWrapper.classList.add('hidden');
+      }
+
+      // หาก Login เป็น Staff หรือ Admin ให้มีปุ่มลัดแก้ไขได้จาก Pop-up
+      const editBtn = document.getElementById('detailEditBtn');
+      if (STATE.auth.isLoggedIn) {
+        editBtn.classList.remove('hidden');
+        editBtn.onclick = () => {
+          closeModal('taskDetailModal');
+          openTaskModal(task.id);
+        };
+      } else {
+        editBtn.classList.add('hidden');
+      }
+
+      openModal('taskDetailModal');
+      lucide.createIcons();
+    }
+
+    /**
+     * แสดงรายการงานใน Tab Staff (แก้ไขได้อย่างเดียว)
+     */
+    function renderStaffView() {
+      const container = document.getElementById('staffTasksContainer');
+      const catFilter = document.getElementById('staffCategoryFilter').value || 'ALL';
+      const statusFilter = document.getElementById('staffStatusFilter').value || 'ALL';
+      const search = (document.getElementById('staffSearchInput').value || '').trim().toLowerCase();
+
+      const filtered = STATE.tasks.filter(t => {
+        if (catFilter !== 'ALL' && t.categoryId !== catFilter) return false;
+        if (statusFilter !== 'ALL' && t.status !== statusFilter) return false;
+        if (!search) return true;
+        const emp = getAssigneeById(t.assigneeId);
+        return (
+          t.title.toLowerCase().includes(search) ||
+          (t.details || '').toLowerCase().includes(search) ||
+          (emp && emp.fullName.toLowerCase().includes(search))
+        );
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="col-span-full glass-card rounded-3xl p-8 text-center text-slate-400">ไม่พบรายการงานที่ค้นหา</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(task => renderManageTaskCard(task, false)).join('');
+      lucide.createIcons();
+    }
+
+    /**
+     * แสดงรายการงานใน Tab Admin (เพิ่ม / แก้ไข / ลบได้)
+     */
+    function renderAdminTasks() {
+      const container = document.getElementById('adminTasksContainer');
+      const catFilter = document.getElementById('adminCategoryFilter').value || 'ALL';
+      const statusFilter = document.getElementById('adminStatusFilter').value || 'ALL';
+      const search = (document.getElementById('adminTaskSearch').value || '').trim().toLowerCase();
+
+      const filtered = STATE.tasks.filter(t => {
+        if (catFilter !== 'ALL' && t.categoryId !== catFilter) return false;
+        if (statusFilter !== 'ALL' && t.status !== statusFilter) return false;
+        if (!search) return true;
+        const emp = getAssigneeById(t.assigneeId);
+        return (
+          t.title.toLowerCase().includes(search) ||
+          (t.details || '').toLowerCase().includes(search) ||
+          (emp && emp.fullName.toLowerCase().includes(search))
+        );
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="col-span-full glass-card rounded-3xl p-8 text-center text-slate-400">ไม่พบรายการงานในหมวดหมู่นี้</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(task => renderManageTaskCard(task, true)).join('');
+      lucide.createIcons();
+    }
+
+    function renderManageTaskCard(task, allowDelete) {
+      const style = APP_CONFIG.STATUS_STYLES[task.status] || APP_CONFIG.STATUS_STYLES['รอดำเนินการ'];
+      const cat = STATE.categories.find(c => c.id === task.categoryId);
+      const emp = getAssigneeById(task.assigneeId);
+
+      return `
+        <div class="glass-card rounded-3xl p-5 shadow-genz flex flex-col justify-between gap-4 ${style.cardBorder}">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-700">
+                ${cat ? `${escapeHtml(cat.icon || '📁')} ${escapeHtml(cat.name)}` : 'ทั่วไป'}
+              </span>
+              ${renderStatusBadge(task.status)}
+            </div>
+
+            <h4 onclick="openTaskDetailPopup('${escapeHtml(task.id)}')" class="text-base font-bold text-slate-800 hover:text-sky-600 cursor-pointer transition">
+              ${escapeHtml(task.title)}
+            </h4>
+
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2">
+              ${escapeHtml(task.details || '-')}
+            </p>
+          </div>
+
+          <div class="space-y-3 pt-3 border-t border-sky-100 text-xs">
+            <div class="flex flex-wrap items-center justify-between gap-2 text-slate-600">
+              <span>👤 <b>ผู้รับผิดชอบ:</b> ${emp ? `${escapeHtml(emp.fullName)} (${escapeHtml(emp.phone)})` : 'ไม่ระบุ'}</span>
+              <span>📅 <b>กำหนดเสร็จ:</b> ${formatThaiDate(task.dueDate)}</span>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-1">
+              <button
+                onclick="openTaskDetailPopup('${escapeHtml(task.id)}')"
+                class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium flex items-center gap-1 transition"
+              >
+                <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                <span>ดู Pop-up</span>
+              </button>
+
+              <div class="flex items-center gap-1.5">
+                <button
+                  onclick="openTaskModal('${escapeHtml(task.id)}')"
+                  class="px-3.5 py-1.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold flex items-center gap-1 transition shadow-sm"
+                >
+                  <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
+                  <span>แก้ไขงาน</span>
+                </button>
+                ${
+                  allowDelete
+                    ? `<button
+                        onclick="confirmDeleteTask('${escapeHtml(task.id)}')"
+                        class="px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 font-semibold flex items-center gap-1 transition"
+                      >
+                        <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                        <span>ลบ</span>
+                      </button>`
+                    : ''
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    /**
+     * แสดงการ์ดจัดการกลุ่มงาน (Admin)
+     */
+    function renderAdminCategories() {
+      const container = document.getElementById('adminCategoriesContainer');
+      container.innerHTML = STATE.categories.map(cat => {
+        const count = STATE.tasks.filter(t => t.categoryId === cat.id).length;
+        return `
+          <div class="glass-card rounded-3xl p-5 shadow-genz flex flex-col justify-between gap-4">
+            <div class="flex items-start gap-3.5">
+              <div class="w-12 h-12 rounded-2xl bg-sky-100 text-2xl flex items-center justify-center shrink-0">
+                ${escapeHtml(cat.icon || '📁')}
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-800">${escapeHtml(cat.name)}</h4>
+                <p class="text-xs text-slate-500 mt-1">${escapeHtml(cat.description || '-')}</p>
+                <span class="inline-block mt-2 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-sky-100 text-sky-700">
+                  มีงานในกลุ่มนี้ ${count} งาน
+                </span>
+              </div>
+            </div>
+            <div class="flex justify-end gap-2 pt-3 border-t border-sky-100 text-xs">
+              <button onclick="openCategoryModal('${escapeHtml(cat.id)}')" class="px-3.5 py-1.5 rounded-xl bg-sky-100 hover:bg-sky-200 text-sky-800 font-semibold flex items-center gap-1">
+                <i data-lucide="edit-2" class="w-3.5 h-3.5"></i> แก้ไข
+              </button>
+              <button onclick="confirmDeleteCategory('${escapeHtml(cat.id)}')" class="px-3.5 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 font-semibold flex items-center gap-1">
+                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> ลบ
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+      lucide.createIcons();
+    }
+
+    /**
+     * แสดงตารางผู้รับผิดชอบ (Admin)
+     */
+    function renderAdminAssignees() {
+      const tbody = document.getElementById('adminAssigneesTableBody');
+      if (STATE.assignees.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" class="py-8 text-center text-slate-400">ยังไม่มีรายชื่อผู้รับผิดชอบ</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = STATE.assignees.map(emp => `
+        <tr class="hover:bg-sky-50/60 transition">
+          <td class="py-3 px-4 font-mono text-xs text-slate-500">${escapeHtml(emp.id)}</td>
+          <td class="py-3 px-4 font-semibold text-slate-800">${escapeHtml(emp.fullName)}</td>
+          <td class="py-3 px-4 text-slate-600">${escapeHtml(emp.phone)}</td>
+          <td class="py-3 px-4 text-sky-700 font-medium">${escapeHtml(emp.lineId || '-')}</td>
+          <td class="py-3 px-4 text-right space-x-1">
+            <button onclick="openAssigneeModal('${escapeHtml(emp.id)}')" class="px-3 py-1 rounded-xl bg-sky-100 hover:bg-sky-200 text-sky-700 text-xs font-semibold">
+              แก้ไข
+            </button>
+            <button onclick="confirmDeleteAssignee('${escapeHtml(emp.id)}')" class="px-3 py-1 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 text-xs font-semibold">
+              ลบ
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    /**
+     * ========================================================================
+     * 5. SEARCHABLE ASSIGNEE COMBOBOX (เลือกผู้รับผิดชอบจากตาราง พิมพ์ค้นหาได้)
+     * ========================================================================
+     */
+    function showAssigneeDropdown() {
+      filterAssigneeDropdown();
+      document.getElementById('assigneeDropdownList').classList.remove('hidden');
+    }
+
+    function filterAssigneeDropdown() {
+      const input = document.getElementById('assigneeSearchInput');
+      const listEl = document.getElementById('assigneeDropdownList');
+      const q = (input.value || '').trim().toLowerCase();
+
+      const matches = STATE.assignees.filter(a =>
+        a.fullName.toLowerCase().includes(q) ||
+        (a.phone || '').toLowerCase().includes(q) ||
+        (a.lineId || '').toLowerCase().includes(q)
+      );
+
+      if (matches.length === 0) {
+        listEl.innerHTML = `<div class="p-3 text-xs text-slate-400 text-center">ไม่พบรายชื่อที่ค้นหา</div>`;
+      } else {
+        listEl.innerHTML = matches.map(a => `
+          <div
+            onclick="selectAssigneeOption('${escapeHtml(a.id)}')"
+            class="p-2.5 hover:bg-sky-50 cursor-pointer transition flex items-center justify-between text-xs"
+          >
+            <div>
+              <div class="font-semibold text-slate-800">${escapeHtml(a.fullName)}</div>
+              <div class="text-slate-500">โทร: ${escapeHtml(a.phone)} • Line: ${escapeHtml(a.lineId || '-')}</div>
+            </div>
+            <span class="px-2 py-0.5 rounded bg-sky-100 text-sky-700 font-medium">เลือก</span>
+          </div>
+        `).join('');
+      }
+      listEl.classList.remove('hidden');
+    }
+
+    function selectAssigneeOption(assigneeId) {
+      const emp = getAssigneeById(assigneeId);
+      document.getElementById('taskFormAssigneeId').value = emp ? emp.id : '';
+      document.getElementById('assigneeSearchInput').value = emp ? `${emp.fullName} (${emp.phone})` : '';
+      document.getElementById('assigneeDropdownList').classList.add('hidden');
+    }
+
+    function clearSelectedAssignee() {
+      document.getElementById('taskFormAssigneeId').value = '';
+      document.getElementById('assigneeSearchInput').value = '';
+      document.getElementById('assigneeDropdownList').classList.add('hidden');
+    }
+
+    // ปิด Dropdown ผู้รับผิดชอบเมื่อคลิกพื้นที่อื่น
+    document.addEventListener('click', (e) => {
+      const dropdown = document.getElementById('assigneeDropdownList');
+      const searchInput = document.getElementById('assigneeSearchInput');
+      if (dropdown && !dropdown.contains(e.target) && e.target !== searchInput) {
+        dropdown.classList.add('hidden');
+      }
+    });
+
+    /**
+     * ========================================================================
+     * 6. AUTHENTICATION & TAB NAVIGATION (Home / Log In / Staff / Admin)
+     * ========================================================================
+     */
+    function switchTab(tabName) {
+      if (tabName === 'staff' && STATE.auth.role !== 'Staff') {
+        showToast('กรุณาเข้าสู่ระบบด้วยรหัสผ่าน Staff ก่อน', 'error');
+        return switchTab('login');
+      }
+      if (tabName === 'admin' && STATE.auth.role !== 'Admin') {
+        showToast('กรุณาเข้าสู่ระบบด้วยรหัสผ่าน Admin ก่อน', 'error');
+        return switchTab('login');
+      }
+
+      STATE.activeTab = tabName;
+      ['home', 'login', 'staff', 'admin'].forEach(t => {
+        document.getElementById(`tabContent-${t}`).classList.toggle('hidden', t !== tabName);
+      });
+      renderNavigationState();
+      lucide.createIcons();
+    }
+
+    function switchAdminSubTab(subTab) {
+      STATE.adminSubTab = subTab;
+      ['tasks', 'categories', 'assignees'].forEach(st => {
+        document.getElementById(`adminSubView-${st}`).classList.toggle('hidden', st !== subTab);
+        const btn = document.getElementById(`adminSubBtn-${st}`);
+        if (st === subTab) {
+          btn.className = 'px-4 py-2 rounded-2xl text-xs sm:text-sm font-semibold bg-sky-500 text-white shadow-sm transition';
+        } else {
+          btn.className = 'px-4 py-2 rounded-2xl text-xs sm:text-sm font-semibold bg-white/80 text-slate-600 hover:bg-sky-50 transition';
+        }
+      });
+    }
+
+    function renderNavigationState() {
+      const roleBadge = document.getElementById('roleBadge');
+      const staffTabBtn = document.getElementById('tabBtn-staff');
+      const adminTabBtn = document.getElementById('tabBtn-admin');
+      const loginTabLabel = document.getElementById('loginTabLabel');
+      const loggedInPanel = document.getElementById('loggedInPanel');
+      const loginForm = document.getElementById('loginForm');
+
+      // แสดงปุ่ม Tab Staff เฉพาะเมื่อรหัสผ่านเป็น Staff และแสดง Tab Admin เฉพาะเมื่อรหัสผ่านเป็น Admin
+      staffTabBtn.classList.toggle('hidden', STATE.auth.role !== 'Staff');
+      adminTabBtn.classList.toggle('hidden', STATE.auth.role !== 'Admin');
+
+      if (STATE.auth.isLoggedIn) {
+        roleBadge.classList.remove('hidden');
+        roleBadge.textContent = `สิทธิ์: ${STATE.auth.role}`;
+        roleBadge.className = STATE.auth.role === 'Admin'
+          ? 'px-2.5 py-0.5 text-[11px] font-semibold rounded-full bg-indigo-100 text-indigo-700 border border-indigo-200'
+          : 'px-2.5 py-0.5 text-[11px] font-semibold rounded-full bg-sky-100 text-sky-700 border border-sky-200';
+        loginTabLabel.textContent = `บัญชี (${STATE.auth.role})`;
+        loggedInPanel.classList.remove('hidden');
+        loginForm.classList.add('hidden');
+        document.getElementById('currentRoleText').textContent = `เข้าสู่ระบบในฐานะ: ${STATE.auth.role}`;
+      } else {
+        roleBadge.classList.add('hidden');
+        loginTabLabel.textContent = 'Log In';
+        loggedInPanel.classList.add('hidden');
+        loginForm.classList.remove('hidden');
+      }
+
+      ['home', 'login', 'staff', 'admin'].forEach(t => {
+        const btn = document.getElementById(`tabBtn-${t}`);
+        if (!btn) return;
+        const isActive = STATE.activeTab === t;
+        if (isActive) {
+          btn.classList.add('bg-gradient-to-r', 'from-sky-500', 'to-blue-600', 'text-white', 'shadow-md', 'shadow-sky-200');
+          btn.classList.remove('text-slate-600', 'hover:bg-sky-50');
+        } else {
+          btn.classList.remove('bg-gradient-to-r', 'from-sky-500', 'to-blue-600', 'text-white', 'shadow-md', 'shadow-sky-200');
+          btn.classList.add('text-slate-600', 'hover:bg-sky-50');
+        }
+      });
+    }
+
+    async function handleLoginSubmit(e) {
+      e.preventDefault();
+      const pwdInput = document.getElementById('loginPasswordInput');
+      const password = pwdInput.value.trim();
+      if (!password) return;
+
+      const submitBtn = document.getElementById('loginSubmitBtn');
+      submitBtn.disabled = true;
+
+      try {
+        const res = await callGasApi('login', { password });
+        STATE.auth = {
+          isLoggedIn: true,
+          role: res.role,
+          password: password
+        };
+        pwdInput.value = '';
+        showToast(`เข้าสู่ระบบสำเร็จในสิทธิ์ ${res.role}`, 'success');
+        renderNavigationState();
+        switchTab(res.role === 'Admin' ? 'admin' : 'staff');
+      } catch (err) {
+        showToast(err.message || 'รหัสผ่านไม่ถูกต้อง', 'error');
+      } finally {
+        submitBtn.disabled = false;
+      }
+    }
+
+    function handleLogout() {
+      STATE.auth = { isLoggedIn: false, role: null, password: '' };
+      showToast('ออกจากระบบเรียบร้อยแล้ว', 'info');
+      switchTab('home');
+    }
+
+    function goToRoleTab() {
+      if (STATE.auth.role === 'Admin') switchTab('admin');
+      else if (STATE.auth.role === 'Staff') switchTab('staff');
+    }
+
+    function togglePasswordVisibility() {
+      const input = document.getElementById('loginPasswordInput');
+      input.type = input.type === 'password' ? 'text' : 'password';
+    }
+
+    /**
+     * ========================================================================
+     * 7. CRUD FORM HANDLERS (เพิ่ม / แก้ไข / ลบ งาน, กลุ่มงาน, ผู้รับผิดชอบ)
+     * ========================================================================
+     */
+    function openTaskModal(taskId) {
+      const modalTitle = document.getElementById('taskFormModalTitle');
+      const task = taskId ? STATE.tasks.find(t => t.id === taskId) : null;
+
+      document.getElementById('taskFormId').value = task ? task.id : '';
+      document.getElementById('taskFormCategory').value = task ? task.categoryId : (STATE.categories[0]?.id || '');
+      document.getElementById('taskFormStatus').value = task ? task.status : 'รอดำเนินการ';
+      document.getElementById('taskFormTitle').value = task ? task.title : '';
+      document.getElementById('taskFormDueDate').value = task ? task.dueDate : new Date().toISOString().slice(0, 10);
+      document.getElementById('taskFormDetails').value = task ? task.details : '';
+      document.getElementById('taskFormLink').value = task ? task.link : '';
+
+      if (task && task.assigneeId) {
+        selectAssigneeOption(task.assigneeId);
+      } else {
+        clearSelectedAssignee();
+      }
+
+      modalTitle.textContent = task ? 'แก้ไขข้อมูลงาน' : 'เพิ่มงานที่ต้องทำหรือประสาน';
+      openModal('taskFormModal');
+    }
+
+    async function handleTaskFormSubmit(e) {
+      e.preventDefault();
+      const id = document.getElementById('taskFormId').value;
+      const taskPayload = {
+        id: id || undefined,
+        categoryId: document.getElementById('taskFormCategory').value,
+        status: document.getElementById('taskFormStatus').value,
+        title: document.getElementById('taskFormTitle').value.trim(),
+        dueDate: document.getElementById('taskFormDueDate').value,
+        assigneeId: document.getElementById('taskFormAssigneeId').value,
+        details: document.getElementById('taskFormDetails').value.trim(),
+        link: document.getElementById('taskFormLink').value.trim()
+      };
+
+      try {
+        const action = id ? 'updateTask' : 'addTask';
+        const res = await callGasApi(action, { task: taskPayload });
+        if (res && res.allData) applyServerData(res.allData);
+        else renderAllViews();
+
+        closeModal('taskFormModal');
+        showToast(id ? 'บันทึกการแก้ไขงานเรียบร้อย' : 'เพิ่มงานใหม่เรียบร้อยแล้ว', 'success');
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    async function confirmDeleteTask(taskId) {
+      if (!confirm('ยืนยันการลบงานนี้ออกจากระบบ?')) return;
+      try {
+        const res = await callGasApi('deleteTask', { id: taskId });
+        if (res && res.allData) applyServerData(res.allData);
+        else renderAllViews();
+        showToast('ลบงานเรียบร้อยแล้ว', 'info');
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    function openCategoryModal(categoryId) {
+      const cat = categoryId ? STATE.categories.find(c => c.id === categoryId) : null;
+      document.getElementById('catFormId').value = cat ? cat.id : '';
+      document.getElementById('catFormIcon').value = cat ? (cat.icon || '📁') : '🙏';
+      document.getElementById('catFormName').value = cat ? cat.name : '';
+      document.getElementById('catFormDesc').value = cat ? cat.description : '';
+      document.getElementById('categoryModalTitle').textContent = cat ? 'แก้ไขกลุ่มงาน' : 'เพิ่มกลุ่มงานใหม่';
+      openModal('categoryFormModal');
+    }
+
+    async function handleCategoryFormSubmit(e) {
+      e.preventDefault();
+      const id = document.getElementById('catFormId').value;
+      const category = {
+        id: id || undefined,
+        icon: document.getElementById('catFormIcon').value.trim() || '📁',
+        name: document.getElementById('catFormName').value.trim(),
+        description: document.getElementById('catFormDesc').value.trim()
+      };
+
+      try {
+        const action = id ? 'updateCategory' : 'addCategory';
+        const res = await callGasApi(action, { category });
+        if (res && res.allData) applyServerData(res.allData);
+        else renderAllViews();
+
+        closeModal('categoryFormModal');
+        showToast('บันทึกข้อมูลกลุ่มงานเรียบร้อย', 'success');
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    async function confirmDeleteCategory(categoryId) {
+      if (!confirm('หากลบกลุ่มงานนี้ งานภายในกลุ่มนี้จะถูกลบด้วย ยืนยันหรือไม่?')) return;
+      try {
+        const res = await callGasApi('deleteCategory', { id: categoryId });
+        if (res && res.allData) applyServerData(res.allData);
+        else renderAllViews();
+        showToast('ลบกลุ่มงานเรียบร้อยแล้ว', 'info');
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    function openAssigneeModal(assigneeId) {
+      const emp = assigneeId ? getAssigneeById(assigneeId) : null;
+      document.getElementById('empFormId').value = emp ? emp.id : '';
+      document.getElementById('empFormName').value = emp ? emp.fullName : '';
+      document.getElementById('empFormPhone').value = emp ? emp.phone : '';
+      document.getElementById('empFormLine').value = emp ? emp.lineId : '';
+      document.getElementById('assigneeModalTitle').textContent = emp ? 'แก้ไขข้อมูลผู้รับผิดชอบ' : 'เพิ่มผู้รับผิดชอบใหม่';
+      openModal('assigneeFormModal');
+    }
+
+    async function handleAssigneeFormSubmit(e) {
+      e.preventDefault();
+      const id = document.getElementById('empFormId').value;
+      const assignee = {
+        id: id || undefined,
+        fullName: document.getElementById('empFormName').value.trim(),
+        phone: document.getElementById('empFormPhone').value.trim(),
+        lineId: document.getElementById('empFormLine').value.trim()
+      };
+
+      try {
+        const action = id ? 'updateAssignee' : 'addAssignee';
+        const res = await callGasApi(action, { assignee });
+        if (res && res.allData) applyServerData(res.allData);
+        else renderAllViews();
+
+        closeModal('assigneeFormModal');
+        showToast('บันทึกข้อมูลผู้รับผิดชอบเรียบร้อย', 'success');
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    async function confirmDeleteAssignee(assigneeId) {
+      if (!confirm('ยืนยันการลบรายชื่อผู้รับผิดชอบนี้?')) return;
+      try {
+        const res = await callGasApi('deleteAssignee', { id: assigneeId });
+        if (res && res.allData) applyServerData(res.allData);
+        else renderAllViews();
+        showToast('ลบผู้รับผิดชอบเรียบร้อยแล้ว', 'info');
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    /**
+     * ========================================================================
+     * 8. GAS API CONFIG & SHEET SETUP TRIGGER
+     * ========================================================================
+     */
+    function openApiConfigModal() {
+      document.getElementById('apiConfigUrlInput').value = APP_CONFIG.GAS_WEB_APP_URL;
+      openModal('apiConfigModal');
+    }
+
+    function saveApiConfigUrl() {
+      const url = document.getElementById('apiConfigUrlInput').value.trim();
+      APP_CONFIG.GAS_WEB_APP_URL = url;
+      localStorage.setItem('TAKBAT_GAS_URL', url);
+      closeModal('apiConfigModal');
+      refreshFromServer();
+    }
+
+    async function triggerSetupSheets() {
+      if (!APP_CONFIG.GAS_WEB_APP_URL.trim()) {
+        showToast('กรุณากรอก Google Apps Script Web App URL ก่อนสั่งสร้าง Sheet', 'error');
+        return openApiConfigModal();
+      }
+      try {
+        showToast('กำลังสั่งสร้างตารางใน Google Sheets...', 'info');
+        const res = await callGasApi('setup');
+        showToast(res.message || 'สร้างตารางใน Google Sheets สำเร็จ', 'success');
+        await refreshFromServer();
+      } catch (err) {
+        showToast('เกิดข้อผิดพลาด: ' + err.message, 'error');
+      }
+    }
+
+    /**
+     * ========================================================================
+     * 9. UTILITIES (Modal, Toast, Date Formatter, HTML Escaper)
+     * ========================================================================
+     */
+    function getAssigneeById(id) {
+      return STATE.assignees.find(a => a.id === id) || null;
+    }
+
+    function openModal(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.remove('hidden');
+      el.classList.add('flex');
+    }
+
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.add('hidden');
+      el.classList.remove('flex');
+    }
+
+    function formatThaiDate(dateStr) {
+      if (!dateStr) return '-';
+      const d = new Date(dateStr);
+      if (isNaN(d.getTime())) return dateStr;
+      return d.toLocaleDateString('th-TH', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+
+    function escapeHtml(str) {
+      return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toastContainer');
+      const colors = {
+        success: 'bg-emerald-600 text-white',
+        error: 'bg-rose-600 text-white',
+        info: 'bg-sky-700 text-white'
+      };
+      const toast = document.createElement('div');
+      toast.className = `px-4 py-3 rounded-2xl shadow-lg text-xs sm:text-sm font-medium transition-all duration-300 pointer-events-auto ${colors[type] || colors.info}`;
+      toast.textContent = message;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3200);
+    }
+
+    // Initialize Application
+    window.addEventListener('DOMContentLoaded', () => {
+      switchAdminSubTab('tasks');
+      refreshFromServer();
+    });
+  </script>
+</body>
+</html>
