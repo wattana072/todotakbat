@@ -359,10 +359,6 @@
             <i data-lucide="user-plus" class="w-4 h-4"></i>
             <span>เพิ่มผู้รับผิดชอบ</span>
           </button>
-          <button onclick="triggerSetupSheets()" class="px-3.5 py-2.5 rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition" title="สร้างตารางและหัวคอลัมน์ใน Google Sheets อัตโนมัติ">
-            <i data-lucide="database" class="w-4 h-4"></i>
-            <span>สร้าง Sheet อัตโนมัติ</span>
-          </button>
         </div>
       </div>
 
@@ -1743,23 +1739,7 @@
 
     /**
      * ========================================================================
-     * 8. SHEET SETUP TRIGGER
-     * ========================================================================
-     */
-    async function triggerSetupSheets() {
-      try {
-        showToast('กำลังสั่งสร้างตารางใน Google Sheets...', 'info');
-        const res = await callGasApi('setup');
-        showToast(res.message || 'สร้างตารางใน Google Sheets สำเร็จ', 'success');
-        await refreshFromServer();
-      } catch (err) {
-        showToast('เกิดข้อผิดพลาด: ' + err.message, 'error');
-      }
-    }
-
-    /**
-     * ========================================================================
-     * 9. UTILITIES (Modal, Toast, Date Formatter, HTML Escaper)
+     * 8. UTILITIES (Modal, Toast, Date Formatter, HTML Escaper)
      * ========================================================================
      */
     function getAssigneeById(id) {
