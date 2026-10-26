@@ -281,17 +281,6 @@
             <span>เข้าสู่ระบบ</span>
           </button>
         </form>
-
-        <div class="mt-6 pt-5 border-t border-sky-100 text-xs text-slate-500 space-y-1.5">
-          <div class="flex items-center justify-between">
-            <span>🔹 สิทธิ์ <b>Staff</b> (ดูและแก้ไขงานได้อย่างเดียว):</span>
-            <code class="px-2 py-0.5 rounded bg-sky-100 text-sky-800 font-semibold">Takbat</code>
-          </div>
-          <div class="flex items-center justify-between">
-            <span>🔹 สิทธิ์ <b>Admin</b> (เพิ่ม / แก้ไข / ลบได้ทั้งหมด):</span>
-            <code class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 font-semibold">Admin</code>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -869,7 +858,7 @@
             if (pwd === APP_CONFIG.FALLBACK_PASSWORDS.STAFF) {
               return resolve({ authenticated: true, role: 'Staff' });
             }
-            return reject(new Error('รหัสผ่านไม่ถูกต้อง (ลองใช้ Takbat หรือ Admin)'));
+            return reject(new Error('รหัสผ่านไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง'));
           }
 
           if (action === 'addTask') {
