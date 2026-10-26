@@ -1594,7 +1594,9 @@
       document.getElementById('taskFormCategory').value = task ? task.categoryId : (STATE.categories[0]?.id || '');
       document.getElementById('taskFormStatus').value = task ? task.status : 'รอดำเนินการ';
       document.getElementById('taskFormTitle').value = task ? task.title : '';
-      document.getElementById('taskFormDueDate').value = task ? task.dueDate : new Date().toISOString().slice(0, 10);
+      document.getElementById('taskFormDueDate').value = task
+        ? normalizeDateForInput(task.dueDate)
+        : normalizeDateForInput(new Date());
       document.getElementById('taskFormDetails').value = task ? task.details : '';
       document.getElementById('taskFormLink').value = task ? task.link : '';
 
@@ -1760,9 +1762,58 @@
       el.classList.remove('flex');
     }
 
+    /**
+     * แปลงวันที่จากฐานข้อมูล Google Sheets (เช่น ISO, DD/MM/YYYY, พ.ศ. หรือ Date) ให้เป็น YYYY-MM-DD สำหรับ <input type="date">
+     */
+    function normalizeDateForInput(rawDate) {
+      if (!rawDate) return '';
+      if (rawDate instanceof Date && !isNaN(rawDate.getTime())) {
+        const y = rawDate.getFullYear();
+        const m = String(rawDate.getMonth() + 1).padStart(2, '0');
+        const d = String(rawDate.getDate()).padStart(2, '0');
+        return `${y}-${m}-${d}`;
+      }
+
+      const str = String(rawDate).trim();
+      if (!str) return '';
+
+      // 1. รูปแบบ YYYY-MM-DD หรือ YYYY-MM-DDTHH:mm:ss...
+      const isoMatch = str.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+      if (isoMatch) {
+        let year = parseInt(isoMatch[1], 10);
+        if (year > 2400) year -= 543; // กรณีบันทึกเป็นปี พ.ศ.
+        const month = String(isoMatch[2]).padStart(2, '0');
+        const day = String(isoMatch[3]).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+      }
+
+      // 2. รูปแบบ DD/MM/YYYY หรือ DD-MM-YYYY
+      const dmyMatch = str.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})/);
+      if (dmyMatch) {
+        const day = String(dmyMatch[1]).padStart(2, '0');
+        const month = String(dmyMatch[2]).padStart(2, '0');
+        let year = parseInt(dmyMatch[3], 10);
+        if (year > 2400) year -= 543;
+        return `${year}-${month}-${day}`;
+      }
+
+      // 3. รูปแบบ Date String อื่นๆ จาก Google Sheets (เช่น Mon Nov 10 2026 ... หรือ ISO UTC)
+      const parsed = new Date(str);
+      if (!isNaN(parsed.getTime())) {
+        let year = parsed.getFullYear();
+        if (year > 2400) year -= 543;
+        const month = String(parsed.getMonth() + 1).padStart(2, '0');
+        const day = String(parsed.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+      }
+
+      return '';
+    }
+
     function formatThaiDate(dateStr) {
       if (!dateStr) return '-';
-      const d = new Date(dateStr);
+      const normalized = normalizeDateForInput(dateStr);
+      const d = new Date(normalized || dateStr);
       if (isNaN(d.getTime())) return dateStr;
       return d.toLocaleDateString('th-TH', { year: 'numeric', month: 'short', day: 'numeric' });
     }
