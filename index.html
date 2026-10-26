@@ -132,31 +132,10 @@
             <i data-lucide="sparkles" class="w-4 h-4"></i>
             <span>Admin</span>
           </button>
-
-          <!-- API Settings Button -->
-          <button onclick="openApiConfigModal()" title="ตั้งค่า URL เชื่อมต่อ Google Apps Script" class="p-2 rounded-2xl text-slate-500 hover:text-sky-600 hover:bg-sky-50 border border-transparent hover:border-sky-200 transition-all ml-auto md:ml-1">
-            <i data-lucide="settings" class="w-4 h-4"></i>
-          </button>
         </div>
       </div>
     </div>
   </header>
-
-  <!-- Connection Status Banner (Shown if GAS_API_URL is not set yet) -->
-  <div id="demoBanner" class="hidden max-w-6xl mx-auto px-4 sm:px-6 mt-4">
-    <div class="bg-gradient-to-r from-sky-500/10 via-blue-500/10 to-indigo-500/10 border border-sky-300/80 rounded-2xl p-3.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-      <div class="flex items-center gap-3 text-xs sm:text-sm text-sky-900">
-        <span class="w-8 h-8 rounded-xl bg-sky-200/80 text-sky-700 flex items-center justify-center shrink-0 font-bold">💡</span>
-        <div>
-          <span class="font-semibold">โหมดจำลองข้อมูล (Demo Mode) หรือยังไม่ได้ใส่ Web App URL:</span>
-          <span>คุณสามารถทดสอบระบบได้ทันที หรือกดปุ่มตั้งค่าเพื่อเชื่อมต่อ Google Apps Script API จริง</span>
-        </div>
-      </div>
-      <button onclick="openApiConfigModal()" class="px-3.5 py-1.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-medium shrink-0 transition shadow-sm">
-        เชื่อมต่อ GAS API
-      </button>
-    </div>
-  </div>
 
   <!-- Main Container -->
   <main class="max-w-6xl mx-auto px-4 sm:px-6 mt-6">
@@ -692,51 +671,6 @@
     </div>
   </div>
 
-  <!-- ==================================================================== -->
-  <!-- MODAL 5: GAS API URL SETTINGS (สำหรับตั้งค่า Web App URL บน Vercel) -->
-  <!-- ==================================================================== -->
-  <div id="apiConfigModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
-    <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-pop border border-sky-100">
-      <div class="flex items-center justify-between mb-3">
-        <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
-          <i data-lucide="cloud-cog" class="w-5 h-5 text-sky-500"></i>
-          <span>ตั้งค่าการเชื่อมต่อ Google Apps Script API</span>
-        </h3>
-        <button onclick="closeModal('apiConfigModal')" class="p-2 rounded-full hover:bg-slate-100 text-slate-400">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-      <p class="text-xs text-slate-500 mb-4 leading-relaxed">
-        นำลิงก์ <b>Web App URL</b> (`https://script.google.com/macros/s/AKfycbwaPula_ivxob1l2P1rIdYs0g6hFu9bCdYl_67hGU-AueODbkHmqH2BePe2R2eTQjRN/exec`) ที่ได้จากการ Deploy ไฟล์ <code>Code.gs</code> มาวางที่นี่ หรือแก้ไขที่ตัวแปร <code>APP_CONFIG.GAS_WEB_APP_URL</code> ในไฟล์ <code>index.html</code> ก่อนอัปโหลดขึ้น Vercel
-      </p>
-      <div class="space-y-3 text-sm">
-        <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Google Apps Script Web App URL</label>
-          <input
-            type="url"
-            id="apiConfigUrlInput"
-            placeholder="https://script.google.com/macros/s/AKfycb.../exec"
-            class="w-full px-3.5 py-2.5 rounded-2xl border border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400 text-xs sm:text-sm"
-          />
-        </div>
-        <div class="p-3 rounded-2xl bg-sky-50 text-xs text-sky-900 space-y-1">
-          <p class="font-semibold">📌 Google Sheets ที่ผูกไว้ใน Code.gs:</p>
-          <p>• Sheet งานที่ต้องทำ: <code>12KkZZLKbU5MkQwtQp6uuvcXOxsdsKnZDIO7kK6GUSFI</code></p>
-          <p>• Sheet รหัสผ่าน: <code>1HT2f9q5js4oQwEZxAy9lDlK_jtUjO7zQXG9OKPfzvYY</code></p>
-        </div>
-      </div>
-      <div class="mt-5 flex flex-wrap items-center justify-between gap-2">
-        <button onclick="triggerSetupSheets()" class="px-3.5 py-2 rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 text-xs font-semibold">
-          สั่งสร้างตารางใน Sheet อัตโนมัติ (Setup)
-        </button>
-        <div class="flex gap-2">
-          <button onclick="closeModal('apiConfigModal')" class="px-4 py-2 rounded-2xl bg-slate-100 text-slate-700 text-xs sm:text-sm font-medium">ปิด</button>
-          <button onclick="saveApiConfigUrl()" class="px-5 py-2 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white text-xs sm:text-sm font-semibold">บันทึกและซิงค์ข้อมูล</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Toast Notification -->
   <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
@@ -752,8 +686,8 @@
     const APP_CONFIG = {
       APP_NAME: 'งานที่ต้องทำและประสาน งานตักบาตรพระหมื่นรูป กาญจนบุรี',
 
-      // ใส่ URL ที่ได้จากการ Deploy Google Apps Script (Web App URL) ที่นี่
-      GAS_WEB_APP_URL: localStorage.getItem('TAKBAT_GAS_URL') || '',
+      // URL ที่ได้จากการ Deploy Google Apps Script (Web App URL)
+      GAS_WEB_APP_URL: 'https://script.google.com/macros/s/AKfycbwaPula_ivxob1l2P1rIdYs0g6hFu9bCdYl_67hGU-AueODbkHmqH2BePe2R2eTQjRN/exec',
 
       // รหัส Google Sheets อ้างอิง
       DATA_SHEET_ID: '12KkZZLKbU5MkQwtQp6uuvcXOxsdsKnZDIO7kK6GUSFI',
@@ -894,8 +828,6 @@
 
     async function refreshFromServer() {
       const apiUrl = APP_CONFIG.GAS_WEB_APP_URL.trim();
-      document.getElementById('demoBanner').classList.toggle('hidden', Boolean(apiUrl));
-
       if (!apiUrl) {
         renderAllViews();
         return;
@@ -1770,27 +1702,10 @@
 
     /**
      * ========================================================================
-     * 8. GAS API CONFIG & SHEET SETUP TRIGGER
+     * 8. SHEET SETUP TRIGGER
      * ========================================================================
      */
-    function openApiConfigModal() {
-      document.getElementById('apiConfigUrlInput').value = APP_CONFIG.GAS_WEB_APP_URL;
-      openModal('apiConfigModal');
-    }
-
-    function saveApiConfigUrl() {
-      const url = document.getElementById('apiConfigUrlInput').value.trim();
-      APP_CONFIG.GAS_WEB_APP_URL = url;
-      localStorage.setItem('TAKBAT_GAS_URL', url);
-      closeModal('apiConfigModal');
-      refreshFromServer();
-    }
-
     async function triggerSetupSheets() {
-      if (!APP_CONFIG.GAS_WEB_APP_URL.trim()) {
-        showToast('กรุณากรอก Google Apps Script Web App URL ก่อนสั่งสร้าง Sheet', 'error');
-        return openApiConfigModal();
-      }
       try {
         showToast('กำลังสั่งสร้างตารางใน Google Sheets...', 'info');
         const res = await callGasApi('setup');
