@@ -660,6 +660,23 @@
     </div>
   </div>
 
+  <!-- ==================================================================== -->
+  <!-- LOADING / PROCESSING POP-UP MODAL (แสดงขณะโหลดหรือบันทึกข้อมูล) -->
+  <!-- ==================================================================== -->
+  <div id="loadingPopupModal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-slate-900/45 backdrop-blur-sm p-4">
+    <div class="bg-white/95 rounded-3xl max-w-xs w-full p-6 shadow-pop border border-sky-200 text-center flex flex-col items-center gap-3.5 animate-in fade-in zoom-in-95 duration-200">
+      <div class="relative w-14 h-14 flex items-center justify-center">
+        <div class="absolute inset-0 rounded-full border-4 border-sky-100"></div>
+        <div class="absolute inset-0 rounded-full border-4 border-sky-500 border-t-transparent animate-spin"></div>
+        <span class="text-xl">🙏</span>
+      </div>
+      <div>
+        <h4 id="loadingPopupTitle" class="text-base font-bold text-slate-800">กำลังประมวลผล...</h4>
+        <p id="loadingPopupSubtitle" class="text-xs text-slate-500 mt-0.5">กรุณารอสักครู่ ระบบกำลังดำเนินการ</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification -->
   <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
@@ -784,35 +801,71 @@
 
     /**
      * ========================================================================
-     * 3. API CLIENT (เชื่อมต่อกับ Google Apps Script ContentService JSON)
+     * 3. API CLIENT & LOADING POP-UP (เชื่อมต่อกับ Google Apps Script)
      * ========================================================================
      */
+    const ACTION_LOADING_TEXT = {
+      getAllData: { title: 'กำลังโหลดข้อมูล...', subtitle: 'รอสักครู่ ระบบกำลังดึงข้อมูลล่าสุด' },
+      login: { title: 'กำลังตรวจสอบรหัสผ่าน...', subtitle: 'รอสักครู่ ระบบกำลังเข้าสู่ระบบ' },
+      setup: { title: 'กำลังสร้างตารางใน Sheet...', subtitle: 'รอสักครู่ ระบบกำลังตั้งค่าฐานข้อมูล' },
+      addTask: { title: 'กำลังบันทึกงานใหม่...', subtitle: 'รอสักครู่ ระบบกำลังบันทึกข้อมูล' },
+      updateTask: { title: 'กำลังบันทึกการแก้ไขงาน...', subtitle: 'รอสักครู่ ระบบกำลังอัปเดตข้อมูล' },
+      deleteTask: { title: 'กำลังลบรายการงาน...', subtitle: 'รอสักครู่ ระบบกำลังประมวลผล' },
+      addCategory: { title: 'กำลังบันทึกกลุ่มงาน...', subtitle: 'รอสักครู่ ระบบกำลังบันทึกข้อมูล' },
+      updateCategory: { title: 'กำลังแก้ไขกลุ่มงาน...', subtitle: 'รอสักครู่ ระบบกำลังอัปเดตข้อมูล' },
+      deleteCategory: { title: 'กำลังลบกลุ่มงาน...', subtitle: 'รอสักครู่ ระบบกำลังประมวลผล' },
+      addAssignee: { title: 'กำลังบันทึกผู้รับผิดชอบ...', subtitle: 'รอสักครู่ ระบบกำลังบันทึกข้อมูล' },
+      updateAssignee: { title: 'กำลังแก้ไขผู้รับผิดชอบ...', subtitle: 'รอสักครู่ ระบบกำลังอัปเดตข้อมูล' },
+      deleteAssignee: { title: 'กำลังลบผู้รับผิดชอบ...', subtitle: 'รอสักครู่ ระบบกำลังประมวลผล' }
+    };
+
+    function showLoadingPopup(title = 'กำลังประมวลผล...', subtitle = 'กรุณารอสักครู่ ระบบกำลังดำเนินการ') {
+      document.getElementById('loadingPopupTitle').textContent = title;
+      document.getElementById('loadingPopupSubtitle').textContent = subtitle;
+      openModal('loadingPopupModal');
+    }
+
+    function hideLoadingPopup() {
+      closeModal('loadingPopupModal');
+    }
+
     async function callGasApi(action, payload = {}) {
       const apiUrl = APP_CONFIG.GAS_WEB_APP_URL.trim();
-      if (!apiUrl) {
-        // โหมดจำลองข้อมูลภายในเครื่องหากยังไม่ได้ใส่ URL
-        return simulateLocalApi(action, payload);
+      const msg = ACTION_LOADING_TEXT[action] || {
+        title: 'กำลังประมวลผล...',
+        subtitle: 'กรุณารอสักครู่ ระบบกำลังดำเนินการ'
+      };
+
+      showLoadingPopup(msg.title, msg.subtitle);
+
+      try {
+        if (!apiUrl) {
+          // โหมดจำลองข้อมูลภายในเครื่องหากยังไม่ได้ใส่ URL
+          return await simulateLocalApi(action, payload);
+        }
+
+        const bodyData = JSON.stringify({
+          action,
+          password: STATE.auth.password,
+          ...payload
+        });
+
+        // ใช้ Content-Type: text/plain เพื่อไม่ให้เกิด CORS preflight block กับ Google Apps Script
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: bodyData,
+          redirect: 'follow'
+        });
+
+        const json = await response.json();
+        if (json.status !== 'success') {
+          throw new Error(json.message || 'เกิดข้อผิดพลาดจากเซิร์ฟเวอร์');
+        }
+        return json.data;
+      } finally {
+        hideLoadingPopup();
       }
-
-      const bodyData = JSON.stringify({
-        action,
-        password: STATE.auth.password,
-        ...payload
-      });
-
-      // ใช้ Content-Type: text/plain เพื่อไม่ให้เกิด CORS preflight block กับ Google Apps Script
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: bodyData,
-        redirect: 'follow'
-      });
-
-      const json = await response.json();
-      if (json.status !== 'success') {
-        throw new Error(json.message || 'เกิดข้อผิดพลาดจากเซิร์ฟเวอร์');
-      }
-      return json.data;
     }
 
     async function refreshFromServer() {
@@ -823,10 +876,9 @@
       }
 
       try {
-        showToast('กำลังโหลดข้อมูลล่าสุดจาก Google Sheets...', 'info');
         const data = await callGasApi('getAllData');
         applyServerData(data);
-        showToast('อัปเดตข้อมูลสำเร็จ', 'success');
+        showToast('โหลดข้อมูลล่าสุดสำเร็จ', 'success');
       } catch (err) {
         showToast('ไม่สามารถดึงข้อมูลจาก GAS: ' + err.message, 'error');
         renderAllViews();
